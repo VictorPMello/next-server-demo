@@ -1,16 +1,16 @@
 "use client";
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { createPost } from "@/app/actions";
+import { createPostAction } from "@/app/actions";
 
-import { Post } from "@/lib/api";
+import { Post } from "@/lib/types";
 
 export default function CreateButton() {
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
     mutationFn: async () => {
-      await createPost();
+      await createPostAction();
     },
     //    onSuccess: () => {
     //      queryClient.invalidateQueries({ queryKey: ["posts"] });

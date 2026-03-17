@@ -1,8 +1,9 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { getPosts, Post } from "@/lib/api";
+import { Post } from "@/lib/types";
 import CreateButton from "./CreateButton";
+import { getPosts } from "@/services/posts.service";
 
 export default function Posts({ initialData }: { initialData: Post[] }) {
   const { data, isLoading, refetch } = useQuery({
