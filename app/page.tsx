@@ -1,8 +1,14 @@
-import Posts from "@/components/Posts";
-import { getPosts } from "@/services/posts.service";
+import FormTask from "@/components/FormTask";
+import Tasks from "@/components/Tasks";
+import { getTasks } from "@/services/tasks.service";
 
 export default async function Home() {
-  const data = await getPosts();
+  const initialData = await getTasks();
 
-  return <Posts initialData={data} />;
+  return (
+    <>
+      <Tasks initialData={initialData} />
+      <FormTask />
+    </>
+  );
 }
